@@ -200,13 +200,13 @@
       "mscorlib.dll": "sha256-kgowZLZGyceaJo4bHvVY1kmm1GJuawa5rPO1RCfNYWc=",
       "netstandard.dll": "sha256-2\/SuexPFW8hizUgbgPcchYHfG\/zmGzzMN6ESSyefPRQ=",
       "System.Private.CoreLib.dll": "sha256-mcywrbK0VZXiOvZ4dxU1ocaPZFplCRSIPQ\/wFikcrus=",
-      "LemonadeStand.dll": "sha256-Rm2ySPqg4tM7kV+yjWY\/RddHV2N1c85WV4qYFwYGxJo="
+      "LemonadeStand.dll": "sha256-G3vtEGC3hj4Sfvd3egoXKze58C1W4B84AL\/MqXf0MiY="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "LemonadeStand.pdb": "sha256-Mp9MhzKe2ep\/q4Tn2EJuM2mcAukc4Ib1PQvWutvOEhY="
+      "LemonadeStand.pdb": "sha256-iN368Mts5SsV+WofsfHIvsNhdraod+pLTXj\/Ik3\/tFo="
     },
     "runtime": {
       "dotnet.7.0.3.a4ty06ew85.js": "sha256-DxGvmbtUa6hGJpk3VyMEbkPZ653qWbQkh8X4ZVM9TWM=",

@@ -12,7 +12,6 @@ namespace LemonadeStand.Repositories
         //än vad det redan är=)
         //I de fallen hade vi kört Asyncront
 
-        //Mock context or datahandeling!
         private readonly List<IRecipe> _recipes;
         public RecipeRepository() 
         {

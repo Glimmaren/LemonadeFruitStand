@@ -1914,11 +1914,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\glimm\\OneDrive\\Dokument\\ITHS\\Projects\\LemonadeStand\\LemonadeStand.csproj",
+      "projectUniqueName": "C:\\Users\\glimm\\OneDrive\\Dokument\\ITHS\\Projects\\LemonadeFruitStand\\LemonadeFruitStand\\LemonadeStand.csproj",
       "projectName": "LemonadeStand",
-      "projectPath": "C:\\Users\\glimm\\OneDrive\\Dokument\\ITHS\\Projects\\LemonadeStand\\LemonadeStand.csproj",
+      "projectPath": "C:\\Users\\glimm\\OneDrive\\Dokument\\ITHS\\Projects\\LemonadeFruitStand\\LemonadeFruitStand\\LemonadeStand.csproj",
       "packagesPath": "C:\\Users\\glimm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\glimm\\OneDrive\\Dokument\\ITHS\\Projects\\LemonadeStand\\obj\\",
+      "outputPath": "C:\\Users\\glimm\\OneDrive\\Dokument\\ITHS\\Projects\\LemonadeFruitStand\\LemonadeFruitStand\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

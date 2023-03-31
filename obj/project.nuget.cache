@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZG6Qorfmhfhim7JQJSxINb99gZvH/SVTl+1NPBITjQa+U6MbPODhldFARN0c/Sz1xl/o8QxuIBFNu8JQYJ+F7A==",
+  "dgSpecHash": "vbVwhDhCFjJiG5secY93fH5uMlWpUqWOFWEXBafkBBnxVyGVCbw957oPdPV8Oe8yTPOZm5uIf2fhf7nWqv9XFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\glimm\\OneDrive\\Dokument\\ITHS\\Projects\\LemonadeStand\\LemonadeStand.csproj",
+  "projectFilePath": "C:\\Users\\glimm\\OneDrive\\Dokument\\ITHS\\Projects\\LemonadeFruitStand\\LemonadeFruitStand\\LemonadeStand.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\glimm\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\glimm\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.3\\microsoft.aspnetcore.authorization.7.0.3.nupkg.sha512",

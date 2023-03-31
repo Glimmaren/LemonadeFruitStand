@@ -1,11 +1,5 @@
 ﻿@page "/"
 
-@using LemonadeStand.Interfaces;
-@using LemonadeStand.Pages.Components
-@using LemonadeStand.Results;
-@using LemonadeStand.ViewModels;
-@using System.Collections.ObjectModel;
-@using LemonadeStand.ViewModels.Friuts;
 @inject IRecipeService recipeService
 
 
@@ -20,7 +14,6 @@
     @foreach (var recipe in recipes)
     {
         <div class="card col @(recipe == currentRecipe ? "selected" : "")" @onclick="() => SelectRecipe(recipe)">
-
             <div class="card-body">
                 <h5 class="card-title">@recipe.Name</h5>
                 <hr />

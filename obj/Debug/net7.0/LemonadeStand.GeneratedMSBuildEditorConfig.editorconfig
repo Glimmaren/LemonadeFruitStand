@@ -9,33 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = LemonadeStand
 build_property.RootNamespace = LemonadeStand
-build_property.ProjectDir = C:\Users\glimm\OneDrive\Dokument\ITHS\Projects\LemonadeStand\
+build_property.ProjectDir = C:\Users\glimm\OneDrive\Dokument\ITHS\Projects\LemonadeFruitStand\LemonadeFruitStand\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\glimm\OneDrive\Dokument\ITHS\Projects\LemonadeStand
+build_property.MSBuildProjectDirectory = C:\Users\glimm\OneDrive\Dokument\ITHS\Projects\LemonadeFruitStand\LemonadeFruitStand
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeStand/App.razor]
+[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeFruitStand/LemonadeFruitStand/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeStand/Pages/Components/LemonadeOrder.razor]
+[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeFruitStand/LemonadeFruitStand/Pages/Components/LemonadeOrder.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xMZW1vbmFkZU9yZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeStand/Pages/Components/PressResults.razor]
+[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeFruitStand/LemonadeFruitStand/Pages/Components/PressResults.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xQcmVzc1Jlc3VsdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeStand/Pages/Index.razor]
+[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeFruitStand/LemonadeFruitStand/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeStand/_Imports.razor]
+[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeFruitStand/LemonadeFruitStand/Pages/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeFruitStand/LemonadeFruitStand/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeStand/Shared/MainLayout.razor]
+[C:/Users/glimm/OneDrive/Dokument/ITHS/Projects/LemonadeFruitStand/LemonadeFruitStand/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-rlwy6lmzfc
