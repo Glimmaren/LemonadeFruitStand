@@ -1,0 +1,71 @@
+﻿@page "/"
+
+@using LemonadeStand.Interfaces;
+@using LemonadeStand.Pages.Components
+@using LemonadeStand.Results;
+@using LemonadeStand.ViewModels;
+@using System.Collections.ObjectModel;
+@using LemonadeStand.ViewModels.Friuts;
+@inject IRecipeService recipeService
+
+
+<PageTitle>Lemonade Stand</PageTitle>
+
+<h1>Lemonade Stand</h1>
+<hr/>
+<h2>Available recepies</h2>
+<p>Select recipe</p>
+
+<div class="row">
+    @foreach (var recipe in recipes)
+    {
+        <div class="card col @(recipe == currentRecipe ? "selected" : "")" @onclick="() => SelectRecipe(recipe)">
+
+            <div class="card-body">
+                <h5 class="card-title">@recipe.Name</h5>
+                <hr />
+                <p class="card-text">Price per glass: @recipe.PricePerGlass</p>
+                <hr />
+                <p class="card-text">Fruits needed per glass: @recipe.ConsumptionPerGlass @recipe.AllowedFruit.Name (s)</p>
+            </div>
+        </div>
+    }
+</div>
+<hr />
+
+@if (currentRecipe == null)
+{
+    <p class="text-black bg-danger">Please select a recipe</p> 
+}
+else
+{
+    <div class="row">
+        <LemonadeOrder currentRecipe="@currentRecipe" SendResults="@HandleResultFromLemonadOrder" RecipeChanged="@recipeChanged" />
+        <PressResults currentRecipe="@currentRecipe" fruitPressResult="@fruitPressResult" />
+    </div>
+}
+
+@code {
+
+    private IList<IRecipe> recipes;
+    private IRecipe currentRecipe;
+    private FruitPressResult fruitPressResult;
+    private bool recipeChanged = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        recipes = recipeService.GetRecipes();
+
+    }
+    void SelectRecipe(IRecipe recipe)
+    {
+        currentRecipe = recipe;
+    }
+    // Handles the result from the LemonadeOrder component
+    private void HandleResultFromLemonadOrder(FruitPressResult pressResultAsync)
+    {
+        fruitPressResult = pressResultAsync;
+    }
+    
+    
+}

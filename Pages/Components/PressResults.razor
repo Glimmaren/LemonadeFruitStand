@@ -1,0 +1,34 @@
+﻿@using LemonadeStand.Interfaces;
+@using LemonadeStand.Results;
+
+<div class="col-4 border rounded pt-2">
+    @if (fruitPressResult != null)
+    {
+        @if (!fruitPressResult.IsSuccess)
+        {
+            <h2>ERROR!</h2>
+            @if (!fruitPressResult.IsEnoghtMoney)
+            {
+                <p class="text-danger">Not enough money, @Math.Abs(fruitPressResult.MoneyDiff) more needed!</p>
+            }
+            @if (!fruitPressResult.IsEnoughFruit)
+            {
+                <p class="text-danger">Not enough @currentRecipe.AllowedFruit.Name, @Math.Abs(fruitPressResult.FruitDiff) more needed!</p>
+            }
+        }
+        else
+        {
+            <h2>Order Succes</h2>
+            <p>Money back: @fruitPressResult.MoneyDiff</p>
+            <p>@currentRecipe.AllowedFruit.Name (s) over: @fruitPressResult.FruitDiff</p>
+        }
+    }
+
+</div>
+
+@code {
+    [Parameter]
+    public FruitPressResult? fruitPressResult { get; set; }
+    [Parameter]
+    public IRecipe? currentRecipe { get; set; }
+}

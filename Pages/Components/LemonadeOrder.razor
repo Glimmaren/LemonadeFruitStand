@@ -1,0 +1,148 @@
+﻿@using FluentValidation;
+@using LemonadeStand.Helpers.Validation;
+@using LemonadeStand.Interfaces;
+@using LemonadeStand.Results;
+@using LemonadeStand.ViewModels.Friuts;
+@using System.Collections.ObjectModel;
+@inject IFruitPressService fruitPressService
+
+<div class="col-8 border rounded pt-2">            
+    <h2>Customer order</h2>
+    <div class="form-group">
+        <label for="quantity">Ordered quantity:</label>
+        <InputNumber class="form-control" @bind-Value="@orderedQuantity" min="0" @oninput="(e) => { UpdateOrderedQuantity(e.Value.ToString()); CheckInputValues();}" />
+
+        <label for="moneyPaid">Money Paid:</label>
+        <InputNumber class="form-control" @bind-Value="@moneyPaid" min="0" @oninput="(e) => { UpdateMoneyPaidValue(e.Value.ToString()); CheckInputValues();}" />
+
+        <label for="applesAdded">Apples Added:</label>
+        <InputNumber TValue="int" class="form-control" @bind-Value="tempApple" min="0" disabled="@(!CurrentRecipe.AllowedFruit.Name.Equals(typeof(Apple).Name))" @oninput="(e) => AddFruits(CurrentRecipe.AllowedFruit.Name, e.Value.ToString())" />
+
+        <label for="melonsAdded">Melons Added:</label>
+        <InputNumber TValue="int" class="form-control" @bind-Value="tempMelon" min="0" disabled="@(!CurrentRecipe.AllowedFruit.Name.Equals(typeof(Melon).Name))" @oninput="(e) => AddFruits(CurrentRecipe.AllowedFruit.Name, e.Value.ToString())" />
+
+        <label for="orangesAdded">Oranges Added:</label>
+        <InputNumber TValue="int" class="form-control" @bind-Value="tempOrange" min="0" disabled="@(!CurrentRecipe.AllowedFruit.Name.Equals(typeof(Orange).Name))" @oninput="(e) => AddFruits(CurrentRecipe.AllowedFruit.Name, e.Value.ToString())" />
+    </div>
+    <button class="btn btn-primary mt-2" @onclick="() => Process()" disabled="@(!IsQuantityNonZero || !IsMoneyPaidNonZero)">Process</button>
+    <p class="alert-danger">@errorMessageMoney</p>
+    <p class="alert-danger">@errorMessageQuantity</p>
+</div>
+
+@code {
+
+    [Parameter]
+    public IRecipe? CurrentRecipe { get; set; }
+    [Parameter]
+    public EventCallback<FruitPressResult> SendResults { get; set; }
+    [Parameter]
+    public bool RecipeChanged { get; set; } 
+    private int orderedQuantity;
+    private int moneyPaid;
+    int tempApple;
+    int tempMelon;
+    int tempOrange;
+    private Collection<IFruit> fruits = new Collection<IFruit>();
+    private FruitPressResult fruitPressResult;
+
+    //For Validation
+    private bool IsQuantityNonZero = false;
+    private bool IsMoneyPaidNonZero = false;
+    private string errorMessageMoney;
+    private string errorMessageQuantity;
+
+
+
+    protected override void OnParametersSet()
+    {
+        if(RecipeChanged == true)
+        {
+            tempApple = 0;
+            tempMelon = 0;
+            tempOrange = 0;
+            RecipeChanged = false;
+        }
+        tempApple = 0;
+        tempMelon = 0;
+        tempOrange  = 0;
+        CheckInputValues();
+    }
+    private async Task Process()
+    {
+        fruitPressResult = fruitPressService.Produce(CurrentRecipe, fruits, moneyPaid, orderedQuantity);
+        await SendResults.InvokeAsync(fruitPressResult);
+    }
+    private void AddFruits(string fruitType, string quantityStr)
+    {
+        if (!int.TryParse(quantityStr, out int quantity))
+        {
+            // Invalid input, return or throw an exception
+            return;
+        }
+        List<IFruit> fruitsToAdd = new List<IFruit>();
+
+        for (int i = 0; i < quantity; i++)
+        {
+            Console.WriteLine(fruitType);
+            switch (fruitType)
+            {
+
+                case "Apple":
+                    fruitsToAdd.Add(new Apple());
+                    break;
+                case "Melon":
+                    fruitsToAdd.Add(new Melon());
+                    break;
+                case "Orange":
+                    fruitsToAdd.Add(new Orange());
+                    break;
+            }
+        }
+
+        fruits = new Collection<IFruit>();
+
+        foreach (IFruit fruit in fruitsToAdd)
+        {
+            fruits.Add(fruit);
+        }
+    }
+
+    void UpdateOrderedQuantity(string value)
+    {
+        orderedQuantity = int.Parse(value);
+    }
+
+    void UpdateMoneyPaidValue(string value)
+    {
+        moneyPaid = int.Parse(value);
+    }
+
+    private void CheckInputValues()
+    {
+        errorMessageQuantity = "";
+        errorMessageMoney = "";
+        try
+        {
+            ValidationHelper.ValidateOrderedQuantity(orderedQuantity);
+            IsQuantityNonZero = true;
+        }
+        catch (ValidationException e)
+        {         
+            IsQuantityNonZero = false;
+            errorMessageQuantity = e.Message;
+           
+        }
+        try
+        {
+            ValidationHelper.ValidateMoneyPaidQuantity(moneyPaid);
+            IsMoneyPaidNonZero = true;
+        }
+        catch (ValidationException e)
+        {
+            IsMoneyPaidNonZero = false;
+            errorMessageMoney = e.Message;
+
+        }
+        
+    }
+}
